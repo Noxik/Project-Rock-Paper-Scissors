@@ -46,8 +46,5 @@ function getComputerChoice() {
     }
     
 
-/*
-console.log(playerSelection, computerSelection, playRound(playerSelection, computerSelection))
-alert(playRound(playerSelection, computerSelection))
-*/
+
 
