@@ -61,7 +61,7 @@ function playRound (playerSelection, computerSelection) {
     let chose = `You have chosen: ${playerSelection} and computer: ${computerSelection}!`;
 if (playerSelection == computerSelection) {
     selected.textContent = chose;
-    round.style.cssText = 'color: ""; text-decoration: underline';
+    round.style.cssText = 'color: ""; font-style: italic; text-decoration: underline';
     round.textContent = "TIE - no points, play again!";
     jsNodeText ();
 } else if (playerSelection == "Scissors" && computerSelection == "Rock" ||
@@ -69,13 +69,13 @@ if (playerSelection == computerSelection) {
  playerSelection == "Paper" && computerSelection == "Scissors") {
     compPoints++;
     selected.textContent = chose;
-    round.style.color = "red";
+    round.style.cssText = "color: red; font-style: normal; font-weight: bold; text-decoration: none";
     round.textContent = `You Lose! ${computerSelection} beats ${playerSelection}! :(`;
     jsNodeText ();
 } else {
     humanPoints++;
     selected.textContent = chose;
-    round.style.color = "green";
+    round.style..cssText = "color: green; font-style: normal; font-weight: bold; text-decoration: none";
     round.textContent = `You Win! ${playerSelection} beats ${computerSelection}! :D`; 
     jsNodeText ()}
 }
