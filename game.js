@@ -1,9 +1,9 @@
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
+let playAgain = document.getElementById("playAgain");
 
 let selected = document.getElementById("selected");
-
 let round = document.getElementById("round");
 
 let playerScore = document.getElementById("pp");
@@ -15,6 +15,25 @@ let computerSelection
 let compPoints = 0
 let humanPoints = 0
 
+const finalResult = document.getElementById("final");
+
+function whoWon() {
+    if (humanPoints == 5) {
+        finalResult.textContent = "You won!";
+} else if (compPoints == 5) {
+    finalResult.textContent = "You lost!"
+};
+}
+
+function disableButton() {
+    if (humanPoints == 5 || compPoints == 5) {
+        document.querySelector('#rock').disabled = true;
+        document.querySelector('#paper').disabled = true;
+        document.querySelector('#scissors').disabled = true;
+        playAgain.style.cssText = "display: block; margin-top: 20px"
+          }
+}
+
 rock.addEventListener("click", () => {
     playerSelection = "Rock";
    playRound(playerSelection, computerSelection);
@@ -23,20 +42,26 @@ rock.addEventListener("click", () => {
 paper.addEventListener("click", () => {
     playerSelection = "Paper";
     playRound(playerSelection, computerSelection);
+
 });
 
 scissors.addEventListener("click", () => {
     playerSelection = "Scissors";
     playRound(playerSelection, computerSelection);
+
+});
+
+playAgain.addEventListener("click", () => {
+    window.location.reload()
 });
 
 function playRound (playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     console.log("p: ", playerSelection, " c: ", computerSelection)
-    let chose = `You have choosen: ${playerSelection} and computer: ${computerSelection}!`;
+    let chose = `You have chosen: ${playerSelection} and computer: ${computerSelection}!`;
 if (playerSelection == computerSelection) {
     selected.textContent = chose;
-    round.style.color = "";
+    round.style.cssText = 'color: ""; font-style: italic; text-decoration: underline';
     round.textContent = "TIE - no points, play again!";
     jsNodeText ();
 } else if (playerSelection == "Scissors" && computerSelection == "Rock" ||
@@ -58,6 +83,10 @@ if (playerSelection == computerSelection) {
 function jsNodeText () {
     playerScore.textContent = humanPoints;
     compScore.textContent = compPoints;
+    whoWon();
+    disableButton();
+    
+    
 }
 
 function getComputerChoice() {

@@ -1,3 +1,33 @@
-div {
-    margin: 10px 0
+body {
+    margin-top: 48px;
+    display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+button {
+    width: auto;
+    padding: 8px 16px
+
+}
+
+.jsText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    margin: 4px 0
+}
+
+#playAgain{
+display: none;
 }
