@@ -61,7 +61,7 @@ function playRound (playerSelection, computerSelection) {
     let chose = `You have chosen: ${playerSelection} and computer: ${computerSelection}!`;
 if (playerSelection == computerSelection) {
     selected.textContent = chose;
-    round.style.cssText = 'color: ""; font-style: italic; text-decoration: underline';
+    round.style.cssText = 'color: ""; text-decoration: underline';
     round.textContent = "TIE - no points, play again!";
     jsNodeText ();
 } else if (playerSelection == "Scissors" && computerSelection == "Rock" ||
