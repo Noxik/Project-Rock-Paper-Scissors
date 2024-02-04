@@ -3,4 +3,4 @@ Project Odin  1st JS
 
 JS entry level :)
 
-https://noxik.github.io/Etch-A-Sketch/
+DEMO: https://noxik.github.io/Project-Rock-Paper-Scissors/
